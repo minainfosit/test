@@ -14,7 +14,7 @@
                 <label string="cin" />
                 <field name="cin"/> 
                  <label string="ville" />
-                <field name="ville"/> 
+                <field name="vill"/> 
                 
                 <notebook colspan="3">
                     <page string="Books">
@@ -33,6 +33,7 @@
             <tree string="Author" >
                 <field name="firstname"/>
                 <field name="lastname"/>
+                <field name="book_ids"/>
                 <field name="book_ids"/>
             </tree>
         </field>
