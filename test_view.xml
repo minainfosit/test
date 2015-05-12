@@ -92,8 +92,8 @@
     </record>
 
     <record model="ir.ui.view" id="ville_tree">
-        <field name="name">ville.tree</field>
-        <field name="model">test.ville</field>
+        <field name="name">ville.treeh</field>
+        <field name="model">test.ville1</field>
          <field name="type">tree</field>
         <field name="arch" type="xml">
             <tree string="ville" >

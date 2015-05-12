@@ -18,7 +18,7 @@ class book(models.Model):
     author_id = fields.Many2one('test.author','Author',ondelete='cascade')
 
 class ville(models.Model):
-    _name = 'test.ville'
+    _name = 'test.ville1'
     name = fields.Char('ville', required=True)
     
      
