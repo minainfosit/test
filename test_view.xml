@@ -13,9 +13,8 @@
                 <field name="lastname"/> 
                 <label string="cin" />
                 <field name="cin"/> 
-                 <label string="ville" />
-                <field name="vill"/> 
-                
+                <label string="ville" />
+                <field name="ville_id"/>                        
                 <notebook colspan="3">
                     <page string="Books">
                       <field name="book_ids"/>
@@ -33,7 +32,7 @@
             <tree string="Author" >
                 <field name="firstname"/>
                 <field name="lastname"/>
-                <field name="book_ids"/>
+                 
                 <field name="book_ids"/>
             </tree>
         </field>
@@ -79,11 +78,56 @@
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
     </record>
+    
+    <record model="ir.ui.view" id="ville_form">
+        <field name="name">ville.form</field>
+        <field name="model">test.ville</field>
+        <field name="arch" type="xml">
+            <form string="ville" >
+                <label string="name" />
+                <field name="name"/>
+               
+            </form>
+        </field>
+    </record>
 
-    <menuitem id="test" name="test"/>
-       <menuitem name="test" id="section_main_menu_test" parent="test" />
-        <menuitem name="Authors" id="choix_author" parent="section_main_menu_test" action="action_author"/>
-       <menuitem name="Books" id="choix_book" parent="section_main_menu_test" action="action_book"/>
+    <record model="ir.ui.view" id="ville_tree">
+        <field name="name">ville.tree</field>
+        <field name="model">test.ville</field>
+         <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="ville" >
+                <field name="name"/>
+    
+            </tree>
+        </field>
+    </record>
 
+    <record model="ir.actions.act_window" id="action_ville">
+        <field name="name">ville</field>
+        <field name="res_model">test.ville</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+     <menuitem id="test" name="test"/>
+     <menuitem name="test" id="section_main_menu_test" parent="test" />
+     <menuitem name="Authors" id="choix_author" parent="section_main_menu_test" action="action_author"/>
+     <menuitem name="Books" id="choix_book" parent="section_main_menu_test" action="action_book"/>
+     <menuitem name="villes" id="choix_ville" parent="section_main_menu_test" action="action_ville"/>   
+     
+     <record model="ir.ui.view" id="ville_search">
+    <field name="name">ville</field>
+    <field name="model">test.ville</field>
+    <field name="arch" type="xml">
+        <search string="string">
+            <field name="name" />
+            <filter name="filter_see_all" string="All" domain="['|', ('active', '=',True), ('active', '=',False)]" />
+            <filter name="filter_see_active" string="Active" domain="[('active', '=',True)]" />
+            <filter name="filter_see_inactive" string="Inactive" domain="[('active', '=',False)]" />
+        </search>
+    </field>
+</record>
+     <field name="ville_name" />
     </data>
 </openerp>
